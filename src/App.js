@@ -1,25 +1,164 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Map } from './components/Map';
+import { List } from './components/List';
+import {FourSquareClient_id} from './components/APIkeys'
+import {FourSquareClient_secret} from './components/APIkeys'
+import axios from 'axios'
+import escapeRegExp from 'escape-string-regexp'
+
+const neighborhood = {title:'Brooklyn heights',location:{lat:40.6947591, lng:-73.9950086}};
+var places = [];
+
+
+const locations = [
+  {id:10,name:'Iron Chef House',lat:40.697099,lng:-73.9934161,rate:'8.1'},
+  {id:11,name:'Ozu Japanese Cuisine Lounge',lat:40.6973144,lng:-73.9934115,rate:'8.2'},
+  {id:20,name:'Sociale',lat:40.6986932,lng:-73.9925305,rate:'8.3'},
+  {id:15,name:'Noodle Pudding',lat:40.6995644,lng:-73.9921543,rate:'8.4'},
+  {id:12,name:'Dellaroccos',lat:40.695028,lng:-73.9961773,rate:'8.5'},
+  {id:13,name:'Heights Cafe',lat:40.6951996,lng:-73.9959476,rate:'8.6'},
+  {id:14,name:'Hancos',lat:40.6946937,lng:-73.9936949,rate:'8.7'},
+  {id:16,name:'Caffe Buon Gusto',lat:40.6946937,lng:-73.9935876,rate:'8.8'},
+  {id:17,name:'B.GOOD',lat:40.6946967,lng:-73.9938547,rate:'8.9'},
+  {id:18,name:'Vineapple Cafe',lat:40.6984697,lng:-73.9941551,rate:''},
+  {id:19,name:'Jack the Horse Tavern',lat:40.6996909,lng:-73.9939797,rate:'5.0'},
+  {id:21,name:'Tutt Heights',lat:40.6996909,lng:-73.9939797,rate:'6.5'},
+  {id:22,name:'Joe Coffee Company',lat:40.6986654,lng:-73.9951892,rate:'5.1'},
+  {id:23,name:'Montero',lat:40.6913725,lng:-73.9988203,rate:'5.2'},
+  {id:24,name:'Table 87',lat:40.6913003,lng:-73.9974819,rate:'5.3'}
+];
 
 class App extends Component {
+
+  state = {isLoading:true,
+           query:'',
+           focus:''}
+
+  getVenues = (location) => {
+    const endPoint = 'https://api.foursquare.com/v2/venues/search?'
+    const parameters = {
+      client_id:FourSquareClient_id,
+      client_secret:FourSquareClient_secret,
+      ll:location.lat+','+location.lng,
+      query:'restaurant,pizza',
+      radius:500,
+      limit:3,
+      v:'20182507'
+    }
+    console.log('location:',location);
+    axios.get(endPoint+new URLSearchParams(parameters))
+    .then(response=>{console.log('response:',response)
+                     response.data.response.venues.map((item) => {
+                                                                   this.venue = {id:item.id, name:item.name, lat:item.location.lat, lng:item.location.lng, rate:''};
+                                                                   places.push(this.venue)
+                                                                   //console.log('venue:',this.venue);
+                                                                 })
+                      //places.map((item)=>{this.getVenuesRate(item)})
+                      console.log('places array:',places);
+                      this.getVenuesRate(places);
+                    //  this.setState({isLoading:false})
+                    }
+    )
+    .catch(e=>(console.log('get venues Error:',e)))
+  }
+
+  getVenuesRate = (places) => {
+    for (let i=0;i<places.length;i++) {
+
+      const endPoint = 'https://api.foursquare.com/v2/venues/'+places[i].id+'?'
+      const parameters = {
+        client_id:FourSquareClient_id,
+        client_secret:FourSquareClient_secret,
+        v:'20182507'
+      }
+      console.log('passing places[i].id',places[i].id);
+      axios.get(endPoint+new URLSearchParams(parameters))
+      .then(response=>{//console.log('FourSquare place Rate:',response.data.response.venue.rating)
+                        //this.setState({placeRate:response.data.response.venue.rating})
+                        console.log('inside getVenuesRate response:',response);
+                        response.data.response.venue.rating ? places[i].rate = Number(response.data.response.venue.rating): places[i].rate='No rate'
+                        //condition of last async call of arrays items
+                        if (i===places.length-1){
+                          this.setState({isLoading:false}); //rerender components with new gotten data
+                        }
+                      })
+      .catch(e=>(console.log('Place Error:',e)))
+    }
+
+  }
+
+  //search functionality
+  updateQuery = (e) => {
+    //console.log('e.target.value:',e.target.value);
+    this.setState({query:e.target.value.trim()})
+  }
+
+  componentDidMount(){
+    //this.getVenues(neighborhood.location)
+
+    //***************** Case of offline work   **************
+      places = locations.slice()
+      console.log('places after filter',places);
+      this.setState({isLoading:false})
+
+
+        window.updateFocus = (name)=>{
+          this.setState({focus:name});
+          console.log('fired window.updateFocus - argument:'+name+'; this.state.focus:',this.state.focus);
+        }
+        window.updateFocus=window.updateFocus.bind(this)
+
+  }
+
+//  window.changeFocus(name){
+  //  this.setState({focused:name})
+  //}
+  //window.changeFocus()=window.changeFocus.bind(this)
+
+
+
   render() {
+
+    // search box functionality
+    let searchTitles = [];
+
+    if (!this.state.isLoading){
+      console.log('isLoading inside query:',this.state.isLoading);
+      places = places.filter((item)=>{console.log('check >=:'+item.name+(item.rate>=6.8));
+                                       return item.rate>=6.8;})
+
+      console.log('after filter:',places);
+      if (this.state.query){
+        const match = new RegExp(escapeRegExp(this.state.query),'i')
+        searchTitles = places.filter(function(item){return match.test(item.name)})
+        console.log('query:',this.state.query);
+        console.log('searchTitles:',searchTitles);
+      }else{
+        searchTitles = places.slice();
+
+        //console.log('places=',places);
+      }
+    }
+
+
+    let venue = {id:'',name:'',lat:'',lng:'',rate:''};
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>High rated cafe and restaurants in Brooklyn Heights</h1>
+        <div className='App-main-field'>
+          <div className='App-list-field App-fields'>
+            <div className='search-box'>
+              <input type='text' onChange={this.updateQuery} value={this.state.query}/>
+            </div>
+            <List places = {searchTitles} focus={this.state.focus}/>
+          </div>
+          <div className='App-map-field App-fields'>
+             <Map neighborhood = {neighborhood} places = {searchTitles} focus={this.state.focus}/>
+          </div>
+        </div>
       </div>
     );
   }
