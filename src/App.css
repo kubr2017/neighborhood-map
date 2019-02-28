@@ -57,8 +57,8 @@ ul li{
 
 ul li.focused {
   font-size: 120%;
-  color: red;
   margin: 3% 0%;
+  box-shadow: 5px 5px;
 }
 
 ul li:hover {
