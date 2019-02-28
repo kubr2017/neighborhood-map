@@ -66,3 +66,15 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+## Necessary packages
+
+### Axios
+
+https://www.npmjs.com/package/axios
+
+### Google API key
+### Foursquare.com API key
+
+All keys to put in file .... to folder....
