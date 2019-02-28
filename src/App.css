@@ -48,11 +48,14 @@ ul {
 }
 
 ul li{
-  margin:1% 0%;
+  margin:2% 0%;
   border: solid black 1px;
+  border-radius: 5px;
+  padding: 1% 0;
+  box-shadow: 1px 1px;
 }
 
-div.focused {
+ul li.focused {
   font-size: 120%;
   color: red;
   margin: 3% 0%;
@@ -61,6 +64,11 @@ div.focused {
 ul li:hover {
   font-size: 120%;
   margin:3% 0%;
+  padding: 1% 0;
+  box-shadow: 5px 5px;
+  transition: margin 0.5s;
+  transition: box-shadow 0.3s;
+
 }
 
 #map {
