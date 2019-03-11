@@ -7,10 +7,10 @@ class Place extends React.Component {
   }
 
   render(){
-    console.log('inside place:',this.props.place);
+    console.log('inside place, props.place.name:',this.props.place.name,' focus:',this.props.focus);
     console.log('this.props.place.rate:',this.props.place.rate);
     return(
-      <div onClick={this.getFocus} className={this.props.focus===this.props.place.name ? 'focused': null}>{this.props.place.name} <p>Rate: {this.props.place.rate}</p>
+      <div onClick={this.getFocus}>{this.props.place.name} <p>Rate: {this.props.place.rate}</p>
       </div>
     )
   }

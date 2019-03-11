@@ -9,7 +9,7 @@ class List extends React.Component {
     return(
       <div>
         <ul>
-          {this.props.places.map((item) => (<li key = {item.name}><Place place = {item} focus={this.props.focus}/></li>))}
+          {this.props.places.map((item) => (<li key = {item.name} className={this.props.focus===item.name ? 'focused': null}><Place place = {item} focus={this.props.focus}/></li>))}
         </ul>
       </div>
     )

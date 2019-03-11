@@ -11,7 +11,7 @@ class Marker extends React.Component {
   } **/
 
   render() {
-     {console.log('inside place - this.props.focus:',this.props.focus)}
+     {console.log('inside marker - this.props.focus:',this.props.focus)}
       let latlng = {lat:this.props.placeLat,lng:this.props.placeLng}
       let marker = new window.google.maps.Marker({
           position:latlng,
@@ -25,6 +25,7 @@ class Marker extends React.Component {
       marker.addListener('click',()=>{
         infowindow.open(window.map,marker)
         window.updateFocus(this.props.name);
+        console.log('inside markers - this.props.name for updateFocus',this.props.name);
       })
       if(this.props.name===this.props.focus){
         infowindow.open(window.map,marker)

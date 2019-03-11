@@ -61,6 +61,13 @@ ul li.focused {
   box-shadow: 5px 5px;
 }
 
+ul div.focused {
+  font-size: 120%;
+  margin: 3% 0%;
+  box-shadow: 5px 5px;
+}
+
+
 ul li:hover {
   font-size: 120%;
   margin:3% 0%;
