@@ -108,12 +108,12 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.getVenues(neighborhood.location)
+    //this.getVenues(neighborhood.location)
 
     //***************** Case of offline work   **************
-      //places = locations.slice()
-      //console.log('places after filter',places);
-      //this.setState({isLoading:false})
+      places = locations.slice()
+      console.log('places after filter',places);
+      this.setState({isLoading:false})
 
 
         window.updateFocus = (name)=>{
