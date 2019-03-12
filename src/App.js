@@ -51,20 +51,20 @@ class App extends Component {
     axios.get(endPoint+new URLSearchParams(parameters))
     .then(response=>{console.log('response:',response)
                      response.data.response.venues.map((item) => {
-                                                                   this.venue = {id:item.id, name:item.name, lat:item.location.lat, lng:item.location.lng, rate:''};
+                                                                   this.venue = {id:item.id, name:item.name, lat:item.location.lat, lng:item.location.lng, rate:'',pic:'No pic',menu:'No menu'};
                                                                    places.push(this.venue)
                                                                    //console.log('venue:',this.venue);
                                                                  })
                       //places.map((item)=>{this.getVenuesRate(item)})
                       console.log('places array:',places);
-                      this.getVenuesRate(places);
+                      this.getVenuesDetails(places);
                     //  this.setState({isLoading:false})
                     }
     )
     .catch(e=>(console.log('get venues Error:',e)))
   }
 
-  getVenuesRate = (places) => {
+  getVenuesDetails = (places) => {
     for (let i=0;i<places.length;i++) {
 
       const endPoint = 'https://api.foursquare.com/v2/venues/'+places[i].id+'?'
@@ -77,8 +77,20 @@ class App extends Component {
       axios.get(endPoint+new URLSearchParams(parameters))
       .then(response=>{//console.log('FourSquare place Rate:',response.data.response.venue.rating)
                         //this.setState({placeRate:response.data.response.venue.rating})
-                        console.log('inside getVenuesRate response:',response);
+                        //*********** get Rate
+                        console.log('inside getVenuesDetails response:',response);
                         response.data.response.venue.rating ? places[i].rate = Number(response.data.response.venue.rating): places[i].rate='No rate'
+                        //condition check exist photo
+                        if (response.data.response.venue.photos.groups[1]){
+                          places[i].pic = response.data.response.venue.photos.groups[1].items[0].prefix+'75x75'+response.data.response.venue.photos.groups[1].items[0].suffix
+                        }
+                        console.log('inside getVenuesDetails Pic path:',places[i].pic);
+                        //check menu
+                        if (response.data.response.venue.menu.mobileUrl) {
+                          places[i].menu=response.data.response.venue.menu.mobileUrl
+                        }
+
+
                         //condition of last async call of arrays items
                         if (i===places.length-1){
                           this.setState({isLoading:false}); //rerender components with new gotten data
@@ -96,12 +108,12 @@ class App extends Component {
   }
 
   componentDidMount(){
-    //this.getVenues(neighborhood.location)
+    this.getVenues(neighborhood.location)
 
     //***************** Case of offline work   **************
-      places = locations.slice()
-      console.log('places after filter',places);
-      this.setState({isLoading:false})
+      //places = locations.slice()
+      //console.log('places after filter',places);
+      //this.setState({isLoading:false})
 
 
         window.updateFocus = (name)=>{
