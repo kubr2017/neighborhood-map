@@ -13,21 +13,21 @@ var places = [];
 
 
 const locations = [
-  {id:10,name:'Iron Chef House',lat:40.697099,lng:-73.9934161,rate:'8.1',pic:'No pic',menu:'No menu'},
-  {id:11,name:'Ozu Japanese Cuisine Lounge',lat:40.6973144,lng:-73.9934115,rate:'8.2',pic:'No pic',menu:'No menu'},
-  {id:20,name:'Sociale',lat:40.6986932,lng:-73.9925305,rate:'8.3',pic:'No pic',menu:'No menu'},
-  {id:15,name:'Noodle Pudding',lat:40.6995644,lng:-73.9921543,rate:'8.4',pic:'No pic',menu:'No menu'},
-  {id:12,name:'Dellaroccos',lat:40.695028,lng:-73.9961773,rate:'8.5',pic:'No pic',menu:'No menu'},
-  {id:13,name:'Heights Cafe',lat:40.6951996,lng:-73.9959476,rate:'8.6',pic:'No pic',menu:'No menu'},
-  {id:14,name:'Hancos',lat:40.6946937,lng:-73.9936949,rate:'8.7',pic:'No pic',menu:'No menu'},
-  {id:16,name:'Caffe Buon Gusto',lat:40.6946937,lng:-73.9935876,rate:'8.8',pic:'No pic',menu:'No menu'},
-  {id:17,name:'B.GOOD',lat:40.6946967,lng:-73.9938547,rate:'8.9',pic:'No pic',menu:'No menu'},
-  {id:18,name:'Vineapple Cafe',lat:40.6984697,lng:-73.9941551,rate:'',pic:'No pic',menu:'No menu'},
-  {id:19,name:'Jack the Horse Tavern',lat:40.6996909,lng:-73.9939797,rate:'5.0',pic:'No pic',menu:'No menu'},
-  {id:21,name:'Tutt Heights',lat:40.6996909,lng:-73.9939797,rate:'6.5',pic:'No pic',menu:'No menu'},
-  {id:22,name:'Joe Coffee Company',lat:40.6986654,lng:-73.9951892,rate:'5.1',pic:'No pic',menu:'No menu'},
-  {id:23,name:'Montero',lat:40.6913725,lng:-73.9988203,rate:'5.2',pic:'No pic',menu:'No menu'},
-  {id:24,name:'Table 87',lat:40.6913003,lng:-73.9974819,rate:'5.3',pic:'No pic',menu:'No menu'}
+  {id:10,name:'Iron Chef House',lat:40.697099,lng:-73.9934161,rate:'8.1',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
+  {id:11,name:'Ozu Japanese Cuisine Lounge',lat:40.6973144,lng:-73.9934115,rate:'8.2',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
+  {id:20,name:'Sociale',lat:40.6986932,lng:-73.9925305,rate:'8.3',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
+  {id:15,name:'Noodle Pudding',lat:40.6995644,lng:-73.9921543,rate:'8.4',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
+  {id:12,name:'Dellaroccos',lat:40.695028,lng:-73.9961773,rate:'8.5',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
+  {id:13,name:'Heights Cafe',lat:40.6951996,lng:-73.9959476,rate:'8.6',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
+  {id:14,name:'Hancos',lat:40.6946937,lng:-73.9936949,rate:'8.7',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
+  {id:16,name:'Caffe Buon Gusto',lat:40.6946937,lng:-73.9935876,rate:'8.8',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
+  {id:17,name:'B.GOOD',lat:40.6946967,lng:-73.9938547,rate:'8.9',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
+  {id:18,name:'Vineapple Cafe',lat:40.6984697,lng:-73.9941551,rate:'',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
+  {id:19,name:'Jack the Horse Tavern',lat:40.6996909,lng:-73.9939797,rate:'5.0',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
+  {id:21,name:'Tutt Heights',lat:40.6996909,lng:-73.9939797,rate:'6.5',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
+  {id:22,name:'Joe Coffee Company',lat:40.6986654,lng:-73.9951892,rate:'5.1',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
+  {id:23,name:'Montero',lat:40.6913725,lng:-73.9988203,rate:'5.2',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
+  {id:24,name:'Table 87',lat:40.6913003,lng:-73.9974819,rate:'5.3',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'}
 ];
 
 class App extends Component {
@@ -51,7 +51,7 @@ class App extends Component {
     axios.get(endPoint+new URLSearchParams(parameters))
     .then(response=>{console.log('response:',response)
                      response.data.response.venues.map((item) => {
-                                                                   this.venue = {id:item.id, name:item.name, lat:item.location.lat, lng:item.location.lng, rate:'',pic:'No pic',menu:'No menu'};
+                                                                   this.venue = {id:item.id, name:item.name, lat:item.location.lat, lng:item.location.lng, rate:'',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'};
                                                                    places.push(this.venue)
                                                                    //console.log('venue:',this.venue);
                                                                  })
@@ -89,6 +89,11 @@ class App extends Component {
                         if (response.data.response.venue.menu.mobileUrl) {
                           places[i].menu=response.data.response.venue.menu.mobileUrl
                         }
+                        //check address
+                        if (response.data.response.venue.location.address) {
+                          places[i].address=response.data.response.venue.location.address
+                        }
+                        //check
 
 
                         //condition of last async call of arrays items
