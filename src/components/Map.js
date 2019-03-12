@@ -46,7 +46,7 @@ class Map extends React.Component {
     return (
       <div>
         <div id="map" ></div>
-        {this.state.isLoad ?  (this.props.places.map((item)=>(<Marker key = {item.name} markerPush={this.markerPush} name={item.name} focus={this.props.focus} placeLat={item.lat} placeLng={item.lng}/>))):<div>Loading...</div>}
+        {this.state.isLoad ?  (this.props.places.map((item)=>(<Marker key = {item.name} markerPush={this.markerPush} name={item.name} focus={this.props.focus} placeLat={item.lat} placeLng={item.lng} />))):<div>Loading...</div>}
       </div>
     )
   }
