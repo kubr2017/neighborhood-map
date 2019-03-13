@@ -98,7 +98,6 @@ class App extends Component {
                           places[i].hours=response.data.response.venue.hours.timeframes[0]
                         }
 
-
                         //condition of last async call of arrays items
                         if (i===places.length-1){
                           this.setState({isLoading:false}); //rerender components with new gotten data
