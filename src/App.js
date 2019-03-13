@@ -44,7 +44,7 @@ class App extends Component {
       ll:location.lat+','+location.lng,
       query:'restaurant,pizza',
       radius:500,
-      limit:3,
+      limit:1,
       v:'20182507'
     }
     console.log('location:',location);
@@ -86,14 +86,17 @@ class App extends Component {
                         }
                         console.log('inside getVenuesDetails Pic path:',places[i].pic);
                         //check menu
-                        if (response.data.response.venue.menu.mobileUrl) {
+                        if (response.data.response.venue.menu) {
                           places[i].menu=response.data.response.venue.menu.mobileUrl
                         }
                         //check address
                         if (response.data.response.venue.location.address) {
                           places[i].address=response.data.response.venue.location.address
                         }
-                        //check
+                        //check hours
+                        if (response.data.response.venue.hours) {
+                          places[i].hours=response.data.response.venue.hours.timeframes[0]
+                        }
 
 
                         //condition of last async call of arrays items
@@ -144,7 +147,7 @@ class App extends Component {
     if (!this.state.isLoading){
       console.log('isLoading inside query:',this.state.isLoading);
       places = places.filter((item)=>{console.log('check >=:'+item.name+(item.rate>=6.8));
-                                       return item.rate>=6.8;})
+                                       return item.rate>=0;})
 
       console.log('after filter:',places);
       if (this.state.query){
