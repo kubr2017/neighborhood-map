@@ -10,8 +10,8 @@ class Place extends React.Component {
     console.log('inside place, props.place.name:',this.props.place.name,' focus:',this.props.focus);
     console.log('this.props.place.rate:',this.props.place.rate);
     let hoursStr = 'No hours'
-    if (!(this.props.hours==='No hours')){
-      hoursStr='days:{this.props.place.hours.days} open:{this.props.place.hours.open[0].renderedTime}'
+    if (!(this.props.place.hours==='No hours')){
+      hoursStr='days:'+this.props.place.hours.days+' open:'+this.props.place.hours.open[0].renderedTime
       console.log('inside place condition No hours name:'+this.props.place.name+'hoursStr:'+hoursStr);
     }
     return(
