@@ -78,7 +78,7 @@ class App extends Component {
       .then(response=>{//console.log('FourSquare place Rate:',response.data.response.venue.rating)
                         //this.setState({placeRate:response.data.response.venue.rating})
                         //*********** get Rate
-                        console.log('inside getVenuesDetails response:',response);
+                        console.log('inside getVenuesDetails response:',response,' places:',places);
                         response.data.response.venue.rating ? places[i].rate = Number(response.data.response.venue.rating): places[i].rate='No rate'
                         //condition check exist photo
                         if (response.data.response.venue.photos.groups[1]){
@@ -115,12 +115,12 @@ class App extends Component {
   }
 
   componentDidMount(){
-    //this.getVenues(neighborhood.location)
+    this.getVenues(neighborhood.location)
 
     //***************** Case of offline work   **************
-      places = locations.slice()
-      console.log('places after filter',places);
-      this.setState({isLoading:false})
+      //places = locations.slice()
+      //console.log('places after filter',places);
+      //this.setState({isLoading:false})
 
 
         window.updateFocus = (name)=>{
