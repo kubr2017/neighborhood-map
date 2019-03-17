@@ -34,7 +34,8 @@ class App extends Component {
 
   state = {isLoading:true,
            query:'',
-           focus:''}
+           focus:'',
+           places:[]}
 
   getVenues = (location) => {
     const endPoint = 'https://api.foursquare.com/v2/venues/search?'
@@ -99,8 +100,10 @@ class App extends Component {
 
                         //condition of last async call of arrays items
                         if (i===places.length-1){
-                          this.setState({isLoading:false}); //rerender components with new gotten data
-                          console.log('Case isLoading:',this.state.isLoading);
+                          places = places.filter((item)=>{console.log('check >=:'+item.name+(item.rate>=6.8));
+                                                           return item.rate>=0;})
+                          this.setState({places:places}); //rerender components with new gotten data
+                          console.log('Case setState places:',this.state.places);
                         }
                       })
       .catch(e=>(console.log('Place Error:',e)))
@@ -120,7 +123,7 @@ class App extends Component {
     //***************** Case of offline work   **************
       places = locations.slice()
       console.log('places after filter',places);
-      this.setState({isLoading:false})
+      this.setState({places:places})
 
 
         window.updateFocus = (name)=>{
@@ -143,20 +146,15 @@ class App extends Component {
     // search box functionality
     let searchTitles = [];
 
-    if (!this.state.isLoading){
-      console.log('isLoading inside query:',this.state.isLoading);
-      places = places.filter((item)=>{console.log('check >=:'+item.name+(item.rate>=6.8));
-                                       return item.rate>=0;})
-
-      console.log('after filter:',places);
+    if (this.state.places.length){
+      console.log('isLoading inside query:',this.state.places.length);
       if (this.state.query){
         const match = new RegExp(escapeRegExp(this.state.query),'i')
         searchTitles = places.filter(function(item){return match.test(item.name)})
         console.log('query:',this.state.query);
         console.log('searchTitles:',searchTitles);
       }else{
-        searchTitles = places.slice();
-
+        searchTitles = this.state.places.slice();
         //console.log('places=',places);
       }
     }
