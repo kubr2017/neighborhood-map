@@ -7,8 +7,7 @@ class Place extends React.Component {
   }
 
   render(){
-    console.log('inside place, props.place.name:',this.props.place.name,' focus:',this.props.focus);
-    console.log('this.props.place.rate:',this.props.place.rate);
+    console.log('inside place, name:',this.props.place.name,' LoadStatus:',this.props.LoadStatus,' focus:',this.props.focus,' inside place rate:',this.props.place.rate);
     let hoursStr = 'No hours'
     if (!(this.props.place.hours==='No hours')){
       hoursStr='days:'+this.props.place.hours.days+' open hours:'+this.props.place.hours.open[0].renderedTime

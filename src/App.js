@@ -44,7 +44,6 @@ class App extends Component {
       ll:location.lat+','+location.lng,
       query:'restaurant,pizza',
       radius:500,
-      limit:3,
       v:'20182507'
     }
     console.log('location:',location);
@@ -101,6 +100,7 @@ class App extends Component {
                         //condition of last async call of arrays items
                         if (i===places.length-1){
                           this.setState({isLoading:false}); //rerender components with new gotten data
+                          console.log('Case isLoading:',this.state.isLoading);
                         }
                       })
       .catch(e=>(console.log('Place Error:',e)))
@@ -115,12 +115,12 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.getVenues(neighborhood.location)
+    //this.getVenues(neighborhood.location)
 
     //***************** Case of offline work   **************
-      //places = locations.slice()
-      //console.log('places after filter',places);
-      //this.setState({isLoading:false})
+      places = locations.slice()
+      console.log('places after filter',places);
+      this.setState({isLoading:false})
 
 
         window.updateFocus = (name)=>{
@@ -172,7 +172,7 @@ class App extends Component {
             <div className='search-box'>
               <input type='text' onChange={this.updateQuery} value={this.state.query}/>
             </div>
-            <List places = {searchTitles} focus={this.state.focus}/>
+            <List places = {searchTitles} focus={this.state.focus} LoadStatus={this.state.isLoading}/>
           </div>
           <div className='App-map-field App-fields'>
              <Map neighborhood = {neighborhood} places = {searchTitles} focus={this.state.focus}/>
