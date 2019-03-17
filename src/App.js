@@ -134,13 +134,6 @@ class App extends Component {
 
   }
 
-//  window.changeFocus(name){
-  //  this.setState({focused:name})
-  //}
-  //window.changeFocus()=window.changeFocus.bind(this)
-
-
-
   render() {
 
     // search box functionality
