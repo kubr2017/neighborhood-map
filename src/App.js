@@ -45,7 +45,7 @@ class App extends Component {
       ll:location.lat+','+location.lng,
       query:'restaurant,pizza',
       radius:500,
-      limit:3,
+      limit:10,
       v:'20182507'
     }
     console.log('location:',location);
@@ -143,7 +143,7 @@ class App extends Component {
       console.log('isLoading inside query:',this.state.places.length);
       if (this.state.query){
         const match = new RegExp(escapeRegExp(this.state.query),'i')
-        searchTitles = places.filter(function(item){return match.test(item.name)})
+        searchTitles = this.state.places.filter(function(item){return match.test(item.name)})
         console.log('query:',this.state.query);
         console.log('searchTitles:',searchTitles);
       }else{
