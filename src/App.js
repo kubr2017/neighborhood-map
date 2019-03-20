@@ -104,7 +104,7 @@ class App extends Component {
                           places = places.filter((item)=>{console.log('check >=:'+item.name+(item.rate>=6.8));
                                                            return item.rate>=0;})
                           this.setState({places:places}); //rerender components with new gotten data
-                          console.log('Case setState places:',this.state.places);
+                          console.log('Inside cycle getdetails, i=',i,' Case setState places:',this.state.places);
                         }
                       })
       .catch(e=>(console.log('Place Error:',e)))
@@ -124,8 +124,6 @@ class App extends Component {
     //***************** Case of offline work   **************
       //places = locations.slice()
       //this.setState({places:places})
-
-
         window.updateFocus = (name)=>{
           this.setState({focus:name});
           console.log('fired window.updateFocus - argument:'+name+'; this.state.focus:',this.state.focus);
