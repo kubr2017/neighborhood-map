@@ -45,7 +45,7 @@ class App extends Component {
       ll:location.lat+','+location.lng,
       query:'restaurant,pizza',
       radius:500,
-      limit:10,
+      limit:5,
       v:'20182507'
     }
     console.log('location:',location);
@@ -79,7 +79,7 @@ class App extends Component {
       .then(response=>{//console.log('FourSquare place Rate:',response.data.response.venue.rating)
                         //this.setState({placeRate:response.data.response.venue.rating})
                         //*********** get Rate
-                        console.log('inside getVenuesDetails response:',response,' places:',places);
+                        console.log('inside getVenuesDetails response:',response,' places['+i+']',places[i]);
                         response.data.response.venue.rating ? places[i].rate = Number(response.data.response.venue.rating): places[i].rate='No rate'
                         //condition check exist photo
                         if (response.data.response.venue.photos.groups[1]){
