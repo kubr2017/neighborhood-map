@@ -66,6 +66,8 @@ class App extends Component {
   }
 
   getVenuesDetails = (places) => {
+    let requestsArr = [];
+    console.log('requestsArr:',requestsArr);
     for (let i=0;i<places.length;i++) {
 
       const endPoint = 'https://api.foursquare.com/v2/venues/'+places[i].id+'?'
@@ -75,7 +77,7 @@ class App extends Component {
         v:'20182507'
       }
       console.log('passing places[i].id',places[i].id);
-      axios.get(endPoint+new URLSearchParams(parameters))
+      requestsArr.push(axios.get(endPoint+new URLSearchParams(parameters))
       .then(response=>{//console.log('FourSquare place Rate:',response.data.response.venue.rating)
                         //this.setState({placeRate:response.data.response.venue.rating})
                         //*********** get Rate
@@ -101,14 +103,18 @@ class App extends Component {
 
                         //condition of last async call of arrays items
                         if (i===places.length-1){
-                          places = places.filter((item)=>{console.log('check >=:'+item.name+(item.rate>=6.8));
-                                                           return item.rate>=0;})
-                          this.setState({places:places}); //rerender components with new gotten data
-                          console.log('Inside cycle getdetails, i=',i,' Case setState places:',this.state.places);
-                        }
+                          }
                       })
-      .catch(e=>(console.log('Place Error:',e)))
+      .catch(e=>(console.log('Place Error:',e))))
+
     }
+    console.log('requestsArr:',requestsArr);
+    Promise.all(requestsArr).then(response=>{console.log('firing response PromiseAll');
+                                              places = places.filter((item)=>{console.log('check >=:'+item.name+(item.rate>=6.8));
+                                              return item.rate>=0;})
+                                              this.setState({places:places}); //rerender components with new gotten data
+                                              console.log('Inside PromiseAll Case setState places:',this.state.places);
+                                             })
 
   }
 
