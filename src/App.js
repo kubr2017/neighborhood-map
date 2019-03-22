@@ -101,9 +101,6 @@ class App extends Component {
                           places[i].hours=response.data.response.venue.hours.timeframes[0]
                         }
 
-                        //condition of last async call of arrays items
-                        if (i===places.length-1){
-                          }
                       })
       .catch(e=>(console.log('Place Error:',e))))
 
