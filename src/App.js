@@ -81,7 +81,7 @@ class App extends Component {
       .then(response=>{//console.log('FourSquare place Rate:',response.data.response.venue.rating)
                         //this.setState({placeRate:response.data.response.venue.rating})
                         //*********** get Rate
-                        console.log('inside getVenuesDetails response:',response,' places:',places);
+                        console.log('inside getVenuesDetails response:',response,' places['+i+']',places[i]);
                         response.data.response.venue.rating ? places[i].rate = Number(response.data.response.venue.rating): places[i].rate='No rate'
                         //condition check exist photo
                         if (response.data.response.venue.photos.groups[1]){
