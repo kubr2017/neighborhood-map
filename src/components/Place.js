@@ -12,11 +12,12 @@ class Place extends React.Component {
     if (!(this.props.place.hours==='No hours')){
       hoursStr='days:'+this.props.place.hours.days+' open hours:'+this.props.place.hours.open[0].renderedTime
       console.log('inside place condition No hours name:'+this.props.place.name+'hoursStr:'+hoursStr);
+      //<iframe id="frame" src={this.props.place.menu} width='300' height='300' scrolling="yes"></iframe>
     }
     return(
       <div onClick={this.getFocus}>{this.props.place.name} <img src={this.props.place.pic} alt={this.props.place.pic}></img>
         {hoursStr}
-      <p>Rate: {this.props.place.rate}</p>
+      <p>Rate: {this.props.place.rate}</p>menu:
       </div>
     )
   }

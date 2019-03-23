@@ -33,7 +33,7 @@
 .App-fields {
   width:46%;
   height: 100vh;
-  overflow: hidden;
+  /*overflow: hidden;*/
   padding: 1% 2%;
   display: inherit;
   background-color: #eee;
