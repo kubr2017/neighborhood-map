@@ -17,7 +17,7 @@ class Place extends React.Component {
     return(
       <div onClick={this.getFocus}>{this.props.place.name} <img src={this.props.place.pic} alt={this.props.place.pic}></img>
         {hoursStr}
-      <p>Rate: {this.props.place.rate}</p>menu:
+      <p>Rate: {this.props.place.rate}</p>
       </div>
     )
   }
