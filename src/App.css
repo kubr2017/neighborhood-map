@@ -92,9 +92,16 @@ ul li:hover {
 
 }
 
+/*Fonts for text of places*/
 .placeName{
   font-family: "Petit Formal Script", cursive;
   margin: 1%;
+}
+
+.placeAddress{
+  font-size: 1.5em;
+  font-family: "Times New Roman";
+  margin:2%;
 }
 
 #map {

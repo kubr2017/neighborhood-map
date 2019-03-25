@@ -13,14 +13,14 @@ var places = [];
 
 
 const locations = [
-  {id:10,name:'Iron Chef House',lat:40.697099,lng:-73.9934161,rate:'8.1',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'No address'},
-  {id:11,name:'Ozu Japanese Cuisine Lounge',lat:40.6973144,lng:-73.9934115,rate:'8.2',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'No address'},
-  {id:20,name:'Sociale',lat:40.6986932,lng:-73.9925305,rate:'8.3',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'No address'},
-  {id:15,name:'Noodle Pudding',lat:40.6995644,lng:-73.9921543,rate:'8.4',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'No address'},
-  {id:12,name:'Dellaroccos',lat:40.695028,lng:-73.9961773,rate:'8.5',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'No address'},
-  {id:13,name:'Heights Cafe',lat:40.6951996,lng:-73.9959476,rate:'8.6',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'No address'},
-  {id:14,name:'Hancos',lat:40.6946937,lng:-73.9936949,rate:'8.7',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'No address'},
-  {id:16,name:'Caffe Buon Gusto',lat:40.6946937,lng:-73.9935876,rate:'8.8',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'No address'},
+  {id:10,name:'Iron Chef House',lat:40.697099,lng:-73.9934161,rate:'8.1',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'158 Montague St'},
+  {id:11,name:'Ozu Japanese Cuisine Lounge',lat:40.6973144,lng:-73.9934115,rate:'8.2',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'80 Montague St'},
+  {id:20,name:'Sociale',lat:40.6986932,lng:-73.9925305,rate:'8.3',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'80 Clark St'},
+  {id:15,name:'Noodle Pudding',lat:40.6995644,lng:-73.9921543,rate:'8.4',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'80 Henry St'},
+  {id:12,name:'Dellaroccos',lat:40.695028,lng:-73.9961773,rate:'8.5',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'144 Atlantic Ave'},
+  {id:13,name:'Heights Cafe',lat:40.6951996,lng:-73.9959476,rate:'8.6',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'214 Hicks St'},
+  {id:14,name:'Hancos',lat:40.6946937,lng:-73.9936949,rate:'8.7',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'330 Hicks St'},
+  {id:16,name:'Caffe Buon Gusto',lat:40.6946937,lng:-73.9935876,rate:'8.8',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'220 Cadman Plaza'},
   {id:17,name:'B.GOOD',lat:40.6946967,lng:-73.9938547,rate:'8.9',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'No address'},
   {id:18,name:'Vineapple Cafe',lat:40.6984697,lng:-73.9941551,rate:'',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
   {id:19,name:'Jack the Horse Tavern',lat:40.6996909,lng:-73.9939797,rate:'5.0',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
@@ -45,7 +45,7 @@ class App extends Component {
       ll:location.lat+','+location.lng,
       query:'restaurant,pizza',
       radius:500,
-      limit:3,
+      limit:15,
       v:'20182507'
     }
     console.log('location:',location);
