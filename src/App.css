@@ -104,6 +104,15 @@ ul li:hover {
   margin:2%;
 }
 
+.placeTimeDeatils{
+  display: inline-block;
+  width:30%;
+}
+
+.placeTimeDeatils h3{
+  margin:1%;
+}
+
 #map {
   width:100%;
   height: 70vh;
