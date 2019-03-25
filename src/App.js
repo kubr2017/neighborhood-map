@@ -161,8 +161,8 @@ class App extends Component {
         <h1>High rated cafe and restaurants in Brooklyn Heights</h1>
         <div className='App-main-field'>
           <div className='App-list-field App-fields'>
-            <div className='search-box'>
-              <input type='text' onChange={this.updateQuery} value={this.state.query}/>
+            <div className='App-search-box'>
+              Filter:<input type='text' onChange={this.updateQuery} value={this.state.query} />
             </div>
             <List places = {searchTitles} focus={this.state.focus} LoadStatus={this.state.isLoading}/>
           </div>

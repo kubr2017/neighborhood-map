@@ -29,6 +29,19 @@
   width: 100%;
   display:inline-block;
 }
+.App-search-box{
+  height: 2em;
+  width:100%;
+  font-size: 1.7em;
+
+}
+
+.App-search-box input{
+  height: 2em;
+  width:80%;
+  margin-left: 1%;
+  border-radius: 5px;
+}
 
 .App-fields {
   width:40%;
@@ -38,7 +51,7 @@
   display: inherit;
   background-color: #eee;
   vertical-align: top;
-  border: solid black 1px;
+  /*border: solid black 1px;*/
 }
 
 ul {
@@ -77,6 +90,11 @@ ul li:hover {
   transition: margin 0.5s;
   transition: box-shadow 0.3s;
 
+}
+
+.placeName{
+  font-family: "Petit Formal Script", cursive;
+  margin: 1%;
 }
 
 #map {
