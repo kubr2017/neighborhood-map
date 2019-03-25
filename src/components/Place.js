@@ -21,8 +21,8 @@ class Place extends React.Component {
         <div className='placeTimeDeatils'>
           <div dangerouslySetInnerHTML={{ __html: hoursStr }} />
         </div>
+        <a href={this.props.place.menu==='No menu' ? null:this.props.place.menu} target='_blank'><img src='../images/menu-75.jpg' alt='Menu'></img></a>
         <img src={this.props.place.pic} alt={this.props.place.pic}></img>
-        <a href={this.props.place.menu==='No menu' ? null:this.props.place.menu} target='_blank'>{this.props.place.menu==='No menu' ? 'No menu':'Menu'}</a>
       </div>
       <p>Rate: {this.props.place.rate}</p>
       </div>
