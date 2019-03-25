@@ -104,6 +104,10 @@ ul li:hover {
   margin:2%;
 }
 
+.placeDetailsContainer{
+  padding: 1%;
+}
+
 .placeTimeDeatils{
   display: inline-block;
   width:30%;
