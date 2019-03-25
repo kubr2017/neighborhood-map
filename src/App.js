@@ -13,7 +13,7 @@ var places = [];
 
 
 const locations = [
-  {id:10,name:'Iron Chef House',lat:40.697099,lng:-73.9934161,rate:'8.1',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
+  {id:10,name:'Iron Chef House',lat:40.697099,lng:-73.9934161,rate:'8.1',pic:'No pic',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'No address'},
   {id:11,name:'Ozu Japanese Cuisine Lounge',lat:40.6973144,lng:-73.9934115,rate:'8.2',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
   {id:20,name:'Sociale',lat:40.6986932,lng:-73.9925305,rate:'8.3',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
   {id:15,name:'Noodle Pudding',lat:40.6995644,lng:-73.9921543,rate:'8.4',pic:'No pic',menu:'No menu',hours:'No hours',address:'No address'},
@@ -122,11 +122,11 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.getVenues(neighborhood.location)
+    //this.getVenues(neighborhood.location)
 
     //***************** Case of offline work   **************
-      //places = locations.slice()
-      //this.setState({places:places})
+      places = locations.slice()
+      this.setState({places:places})
         window.updateFocus = (name)=>{
           this.setState({focus:name});
           console.log('fired window.updateFocus - argument:'+name+'; this.state.focus:',this.state.focus);
