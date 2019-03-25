@@ -16,7 +16,7 @@ class Place extends React.Component {
     }
     return(
       <div onClick={this.getFocus}><h2 className='placeName'>{this.props.place.name}</h2>
-      <p className='placeAddress'>{this.props.place.address}</p>
+      <h3 className='placeAddress'>{this.props.place.address}</h3>
       <hr/>
       <div className='placeDetailsContainer'>
         <div className='placeTimeDeatils'>
