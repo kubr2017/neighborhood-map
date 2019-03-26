@@ -108,14 +108,24 @@ ul li:hover {
   padding: 0 1%;
 }
 
-.placeTimeDeatils{
+.placeTimeDetails{
   display: inline-block;
   width:30%;
 }
 
+.placeTimeDetails p{
+  margin:0;
+  font-size: 0.7em;
+}
+
 .placeTimeDetails h3{
-  margin:1%;
-  font-size: 1em;
+  margin:0%;
+  font-size: 0.9em;
+}
+
+.placeDetailsContainer img{
+  width:11%;
+  margin: 0 1%;
 }
 
 h2{
