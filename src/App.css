@@ -93,45 +93,44 @@ ul li:hover {
 }
 
 /*Fonts for text of places*/
-.placeName{
-  font-family: "Petit Formal Script", cursive;
-  margin: 1%;
+
+.placeHeader{
+  padding: 1%;
+  position: relative;
+  border-bottom: solid 1px #aaa;
 }
 
-.placeAddress{
+.placeNameContainer{
+  padding: 1%;
+  width: 80%;
+  display: inline-block;
+}
+
+.placeNameContainer h2{
+  margin: 0;
+}
+
+.placeName{
+  font-family: "Petit Formal Script", cursive;
+}
+
+.placeRateContainer{
+  padding: 0.5%;
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
+
+/*.placeAddress{
   font-family: "Times New Roman";
   margin:1%;
   font-size: 1em;
-}
+}*/
 
-.placeDetailsContainer{
-  padding: 0 1%;
-}
-
-.placeTimeDetails{
-  display: inline-block;
-  width:30%;
-}
-
-.placeTimeDetails p{
-  margin:0;
-  font-size: 0.7em;
-}
-
-.placeTimeDetails h3{
-  margin:0%;
-  font-size: 0.9em;
-}
-
-.placeDetailsContainer img{
-  width:11%;
-  margin: 0 1%;
-}
-
-h2{
-  font-size: 1em;
-  font-weight: bold;
-}
 
 #map {
   width:100%;
