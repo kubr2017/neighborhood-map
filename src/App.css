@@ -99,9 +99,9 @@ ul li:hover {
 }
 
 .placeAddress{
-  font-size: 1.5em;
   font-family: "Times New Roman";
   margin:1%;
+  font-size: 1em;
 }
 
 .placeDetailsContainer{
@@ -113,8 +113,14 @@ ul li:hover {
   width:30%;
 }
 
-.placeTimeDeatils h3{
+.placeTimeDetails h3{
   margin:1%;
+  font-size: 1em;
+}
+
+h2{
+  font-size: 1em;
+  font-weight: bold;
 }
 
 #map {

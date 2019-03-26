@@ -19,7 +19,7 @@ class Place extends React.Component {
       <h3 className='placeAddress'>{this.props.place.address}</h3>
       <hr/>
       <div className='placeDetailsContainer'>
-        <div className='placeTimeDeatils'>
+        <div className='placeTimeDetails'>
           <div dangerouslySetInnerHTML={{ __html: hoursStr }} />
         </div>
         <a href={this.props.place.menu==='No menu' ? null:this.props.place.menu} target='_blank'><img src='../images/menu-75.jpg' alt='Menu'></img></a>
