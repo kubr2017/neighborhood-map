@@ -45,7 +45,7 @@ class App extends Component {
       ll:location.lat+','+location.lng,
       query:'restaurant,pizza',
       radius:500,
-      limit:15,
+      limit:5,
       v:'20182507'
     }
     console.log('location:',location);
