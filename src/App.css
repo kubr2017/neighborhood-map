@@ -76,14 +76,14 @@ ul li.focused {
 }
 
 ul div.focused {
-  font-size: 120%;
+  font-size: 110%;
   margin: 3% 0%;
   box-shadow: 5px 5px;
 }
 
 
 ul li:hover {
-  font-size: 120%;
+  font-size: 110%;
   margin:3% 0%;
   padding: 1% 0;
   box-shadow: 5px 5px #999;
@@ -115,15 +115,58 @@ ul li:hover {
 }
 
 .placeRateContainer{
-  padding: 0.5%;
-  width: 20%;
+  padding: 1%;
+  width: 25%;
   height: 100%;
   position: absolute;
   right: 0;
   top: 0;
+  text-align: right;
+  vertical-align: middle;
 }
 
+.placeRate{
+  font-weight: bold;
+}
 
+.placeDetailsContainer{
+  padding: 1%;
+  position: relative;
+}
+.placeMenuContainer{
+  position: relative;
+  display: inline-block;
+  margin: 1%;
+}
+
+.placeMenu{
+  position: absolute;
+  font-weight: bold;
+  left: 30%;
+  color: #fff;
+}
+
+.placeTimeContainer{
+  display: inline-block;
+  padding: 1%;
+}
+
+.placeTimeContainer p{
+  margin: 0;
+  font-weight: bold;
+}
+
+.placeAddressContainer{
+  width: 25%;
+  padding: 2%;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+
+.placeAddress{
+  font-weight: bold;
+}
 
 /*.placeAddress{
   font-family: "Times New Roman";
