@@ -179,6 +179,19 @@ ul li:hover {
   width:100%;
   height: 70vh;
 }
+
+.marker-InfoW-Container{
+
+}
+
+.marker-placeName{
+  font-family: 'Petit Formal Script',cursive;
+}
+
+.marker-address{
+  font-size: 0.75em;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -20,10 +20,12 @@ class Marker extends React.Component {
         });
       this.props.markerPush(marker);
       var infowindow = new window.google.maps.InfoWindow({
-        content:'<div>'+this.props.place.name+'<p>'+this.props.place.address+'</p>'+'</div>'
+        content:'<div class="marker-InfoW-Container"><span class="marker-placeName">'+this.props.place.name+'</span><p class="marker-address">'+this.props.place.address+'</p></div>'
       })
       marker.addListener('click',()=>{
         infowindow.open(window.map,marker)
+        window.map.setCenter(marker.position);
+        window.map.zoom=17;
         window.updateFocus(this.props.place.name);
         console.log('inside markers - this.props.name for updateFocus',this.props.place.name);
       })

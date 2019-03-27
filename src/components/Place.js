@@ -3,6 +3,8 @@ import React from 'react'
 class Place extends React.Component {
 
   getFocus=()=>{
+    window.map.setCenter({lat:this.props.place.lat,lng:this.props.place.lng})
+    window.map.zoom=15;
     window.updateFocus(this.props.place.name)
   }
 
