@@ -18,25 +18,25 @@ class Place extends React.Component {
     }
     return(
       <div onClick={this.getFocus}>
-        <div className='placeHeader'>
-          <div className='placeNameContainer'>
-            <h2 className='placeName'>{this.props.place.name}</h2>
+        <div className='place-Header'>
+          <div className='place-Name-Container'>
+            <h2 className='place-Name'>{this.props.place.name}</h2>
           </div>
-          <div className='placeRateContainer'>
-            <span className='placeRate'>Rate:</span> {this.props.place.rate}
+          <div className='place-Rate-Container'>
+            <span className='place-Rate'>Rate:</span> {this.props.place.rate}
           </div>
         </div>
-      <div className='placeDetailsContainer'>
+      <div className='place-Details-Container'>
         <img src={this.props.place.pic} alt={this.props.place.pic}></img>
-        <div className='placeMenuContainer'>
-          <span className='placeMenu'>Menu</span>
+        <div className='place-Menu-Container'>
+          <span className='place-Menu'>Menu</span>
           <a href={this.props.place.menu==='No menu' ? null:this.props.place.menu} target='_blank'><img src='../images/menu-75.jpg' alt='Menu'></img></a>
         </div>
-        <div className='placeTimeContainer'>
+        <div className='place-Time-Container'>
           <div dangerouslySetInnerHTML={{__html: hoursStr}}/>
         </div>
-        <div className='placeAddressContainer'>
-          <span className='placeAddress'>Address:</span>
+        <div className='place-Address-Container'>
+          <span className='place-Address'>Address:</span>
           <p>{this.props.place.address}</p>
         </div>
       </div>

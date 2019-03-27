@@ -94,27 +94,27 @@ ul li:hover {
 
 /*Fonts for text of places*/
 
-.placeHeader{
+.place-Header{
   padding: 1%;
   position: relative;
   border-bottom: solid 1px #aaa;
 }
 
-.placeNameContainer{
+.place-Name-Container{
   padding: 1%;
   width: 80%;
   display: inline-block;
 }
 
-.placeNameContainer h2{
+.place-Name-Container h2{
   margin: 0;
 }
 
-.placeName{
+.place-Name{
   font-family: "Petit Formal Script", cursive;
 }
 
-.placeRateContainer{
+.place-Rate-Container{
   padding: 1%;
   width: 25%;
   height: 100%;
@@ -125,38 +125,38 @@ ul li:hover {
   vertical-align: middle;
 }
 
-.placeRate{
+.place-Rate{
   font-weight: bold;
 }
 
-.placeDetailsContainer{
+.place-Details-Container{
   padding: 1%;
   position: relative;
 }
-.placeMenuContainer{
+.place-Menu-Container{
   position: relative;
   display: inline-block;
   margin: 1%;
 }
 
-.placeMenu{
+.place-Menu{
   position: absolute;
   font-weight: bold;
   left: 30%;
   color: #fff;
 }
 
-.placeTimeContainer{
+.place-Time-Container{
   display: inline-block;
   padding: 1%;
 }
 
-.placeTimeContainer p{
+.place-Time-Container p{
   margin: 0;
   font-weight: bold;
 }
 
-.placeAddressContainer{
+.place-Address-Container{
   width: 25%;
   padding: 2%;
   display: inline-block;
@@ -164,11 +164,11 @@ ul li:hover {
   right: 0;
 }
 
-.placeAddress{
+.place-Address{
   font-weight: bold;
 }
 
-/*.placeAddress{
+/*.place-Address{
   font-family: "Times New Roman";
   margin:1%;
   font-size: 1em;
@@ -184,7 +184,7 @@ ul li:hover {
 
 }
 
-.marker-placeName{
+.marker-place-Name{
   font-family: 'Petit Formal Script',cursive;
 }
 

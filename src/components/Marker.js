@@ -20,7 +20,7 @@ class Marker extends React.Component {
         });
       this.props.markerPush(marker);
       var infowindow = new window.google.maps.InfoWindow({
-        content:'<div class="marker-InfoW-Container"><span class="marker-placeName">'+this.props.place.name+'</span><p class="marker-address">'+this.props.place.address+'</p></div>'
+        content:'<div class="marker-InfoW-Container"><span class="marker-place-Name">'+this.props.place.name+'</span><p class="marker-address">'+this.props.place.address+'</p></div>'
       })
       marker.addListener('click',()=>{
         infowindow.open(window.map,marker)
