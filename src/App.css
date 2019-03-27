@@ -76,14 +76,14 @@ ul li.focused {
 }
 
 ul div.focused {
-  font-size: 110%;
+  font-size: 107%;
   margin: 3% 0%;
   box-shadow: 5px 5px;
 }
 
 
 ul li:hover {
-  font-size: 110%;
+  font-size: 107%;
   margin:3% 0%;
   padding: 1% 0;
   box-shadow: 5px 5px #999;
@@ -192,11 +192,79 @@ ul li:hover {
   font-size: 0.75em;
 }
 
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/*Responsivness-------------------------------------------------*/
+
+@media screen and (min-width:900px) and (max-width:1024px) {
+  .App-search-box{
+    height: 1.5em;
+    font-size: 1.5em;
+  }
+  .place-Name-Container h2{
+    font-size: 1em;
+  }
+  .place-Rate-container{
+    font-size: 0.7em;
+  }
+  .place-Rate{
+    font-size: 0.7em;
+  }
+
+  .place-Time-Container{
+    font-size: 0.7em;
+  }
+  .place-Time-Container p{
+    font-size: 0.9em;
+  }
+  .place-Address-Container{
+    font-size: 0.79em;
+  }
+  .place-Address-Container p{
+    font-size: 0.79em;
+  }
+}
+
+@media screen and (min-width:700px) and (max-width:899px) {
+
+  .App-search-box{
+    font-size: 1em;
+  }
+
+  .App-search-box input{
+    height: 1em;
+  }
+
+  .place-Name-Container h2{
+    font-size: 0.7em;
+  }
+
+  .place-Rate-container{
+    font-size: 0.5em;
+  }
+
+  .place-Rate{
+    font-size: 0.5em;
+  }
+
+  .place-Time-Container{
+    font-size: 0.7em;
+  }
+  .place-Time-Container p{
+    font-size: 0.9em;
+  }
+  .place-Address-Container{
+    font-size: 0.79em;
+  }
+  .place-Address-Container p{
+    font-size: 0.79em;
   }
 }

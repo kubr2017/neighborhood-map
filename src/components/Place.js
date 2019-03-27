@@ -23,7 +23,7 @@ class Place extends React.Component {
             <h2 className='place-Name'>{this.props.place.name}</h2>
           </div>
           <div className='place-Rate-Container'>
-            <span className='place-Rate'>Rate:</span> {this.props.place.rate}
+            <span className='place-Rate'>Rate:{this.props.place.rate}</span>
           </div>
         </div>
       <div className='place-Details-Container'>
