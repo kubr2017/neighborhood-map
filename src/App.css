@@ -214,6 +214,7 @@ ul li:hover {
 /*Responsivness-------------------------------------------------*/
 
 @media screen and (min-width:900px) and (max-width:1024px) {
+
   .App-fields{
     width:46%;
     margin: 0;
@@ -232,6 +233,14 @@ ul li:hover {
     font-size: 0.7em;
   }
 
+  .place-Details-Container img{
+    width: 55px;
+  }
+
+  .place-Menu{
+    left: 7%;
+  }
+
   .place-Time-Container{
     font-size: 0.7em;
   }
@@ -248,11 +257,17 @@ ul li:hover {
 
 @media screen and (min-width:700px) and (max-width:899px) {
 
-  .App-fields{
-    width:46%;
-    margin: 0;
+  .App h1{
+    font-size: 1.5em;
   }
 
+.App-list-field{
+  width:59%;
+}
+
+.App-map-field{
+  width:33%;
+}
   .App-search-box{
     font-size: 1em;
   }
@@ -276,6 +291,120 @@ ul li:hover {
 .place-Details-Container img{
   width: 50px;
 }
+
+.place-Menu{
+  left: 7%;
+}
+
+  .place-Time-Container{
+    font-size: 0.7em;
+  }
+  .place-Time-Container p{
+    font-size: 0.9em;
+  }
+  .place-Address-Container{
+    font-size: 0.79em;
+  }
+  .place-Address-Container p{
+    font-size: 0.79em;
+  }
+}
+
+@media screen and (min-width:500px) and (max-width:699px){
+
+  .App h1{
+    font-size: 1.1em;
+  }
+
+.App-list-field{
+  width:97%;
+}
+
+.App-map-field{
+  display: none;
+}
+  .App-search-box{
+    font-size: 1em;
+  }
+
+  .App-search-box input{
+    height: 1em;
+  }
+
+  .place-Name-Container h2{
+    font-size: 0.7em;
+  }
+
+  .place-Rate-container{
+    font-size: 0.5em;
+  }
+
+  .place-Rate{
+    font-size: 0.5em;
+  }
+
+.place-Details-Container img{
+  width: 50px;
+}
+
+.place-Menu{
+  left: 7%;
+}
+
+  .place-Time-Container{
+    font-size: 0.7em;
+  }
+  .place-Time-Container p{
+    font-size: 0.9em;
+  }
+  .place-Address-Container{
+    font-size: 0.79em;
+  }
+  .place-Address-Container p{
+    font-size: 0.79em;
+  }
+}
+
+@media screen and (max-width:499px){
+  .App h1{
+    font-size: 1.1em;
+  }
+
+.App-list-field{
+  width:97%;
+}
+
+.App-map-field{
+  display: none;
+}
+  .App-search-box{
+    font-size: 1em;
+  }
+
+  .App-search-box input{
+    height: 1em;
+  }
+
+  .place-Name-Container h2{
+    font-size: 0.7em;
+  }
+
+  .place-Rate-container{
+    font-size: 0.5em;
+  }
+
+  .place-Rate{
+    font-size: 0.5em;
+  }
+
+.place-Details-Container img{
+  width: 50px;
+}
+
+.place-Menu-Container{
+  display:none;
+}
+
   .place-Time-Container{
     font-size: 0.7em;
   }
