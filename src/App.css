@@ -1,3 +1,7 @@
+body{
+  margin:0;
+}
+
 #root{
   max-width:1200px;
   margin: 0 auto;
@@ -210,6 +214,10 @@ ul li:hover {
 /*Responsivness-------------------------------------------------*/
 
 @media screen and (min-width:900px) and (max-width:1024px) {
+  .App-fields{
+    width:46%;
+    margin: 0;
+  }
   .App-search-box{
     height: 1.5em;
     font-size: 1.5em;
@@ -240,6 +248,11 @@ ul li:hover {
 
 @media screen and (min-width:700px) and (max-width:899px) {
 
+  .App-fields{
+    width:46%;
+    margin: 0;
+  }
+
   .App-search-box{
     font-size: 1em;
   }
@@ -260,6 +273,9 @@ ul li:hover {
     font-size: 0.5em;
   }
 
+.place-Details-Container img{
+  width: 50px;
+}
   .place-Time-Container{
     font-size: 0.7em;
   }
