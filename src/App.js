@@ -11,7 +11,7 @@ import escapeRegExp from 'escape-string-regexp'
 const neighborhood = {title:'Brooklyn heights',location:{lat:40.6947591, lng:-73.9950086}};
 var places = [];
 
-
+//Local array of samples of venues in case development version in offline work and debugging
 const locations = [
   {id:10,name:'Iron Chef House',lat:40.697099,lng:-73.9934161,rate:'8.1',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'158 Montague St'},
   {id:11,name:'Ozu Japanese Cuisine Lounge',lat:40.6973144,lng:-73.9934115,rate:'8.2',pic:'../images/close-up-cucumber-cuisine-1440119.jpg',menu:'https://foursquare.com/v/4aad3536f964a520035f20e3/device_menu',hours:{days:'Mon-Sun',open:[{renderedTime: "11:00 AM–10:00 PM"}]},address:'80 Montague St'},
