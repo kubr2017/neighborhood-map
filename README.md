@@ -1,5 +1,5 @@
 
-##About project
+# About project
 
 This is final project 'Neighborhood map' of UDACITY Nannodegree Front-End Web developers programm.
 Its demonstrate skills to using API and React framework.
@@ -11,7 +11,7 @@ User can use filter in top of page by typing letters in input box - list dynamic
 Each venues include own photos and menu from FourSquare.com.
 Menu is clickable and opened in new tab of browser.
 
-##Prepare project
+# Prepare project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
