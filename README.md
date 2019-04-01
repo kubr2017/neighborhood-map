@@ -1,3 +1,18 @@
+
+#About project
+
+This is final project 'Neighborhood map' of UDACITY Nannodegree Front-End Web developers programm.
+Its demonstrate skills to using API and React framework.
+
+In general its web page that show list and locations of high rated venues in Brooklyn Heights neighborhood, Brooklyn,NY,USA.
+Click on any venue in list select appropriate markers in Google MAP and vice versa.
+User can use filter in top of page by typing letters in input box - list dynamically will change.
+
+Each venues include own photos and menu from FourSquare.com.
+Menu is clickable and opened in new tab of browser.
+
+#Prepare project
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -75,6 +90,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 https://www.npmjs.com/package/axios
 
 ### Google API key
-### Foursquare.com API key
+### Foursquare.com API keys
 
-All keys to put in file .... to folder....
+All API keys suppose to put in file ./src/components/APIkeys.js
