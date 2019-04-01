@@ -122,11 +122,11 @@ class App extends Component {
   }
 
   componentDidMount(){
-    //this.getVenues(neighborhood.location)
+    this.getVenues(neighborhood.location)
 
     //***************** Case of offline work   **************
-      places = locations.slice()
-      this.setState({places:places})
+      //places = locations.slice()
+      //this.setState({places:places})
         window.updateFocus = (name)=>{
           this.setState({focus:name});
           console.log('fired window.updateFocus - argument:'+name+'; this.state.focus:',this.state.focus);
