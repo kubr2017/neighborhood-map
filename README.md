@@ -5,10 +5,10 @@ This is final project 'Neighborhood map' of UDACITY Nannodegree Front-End Web de
 It demonstrates skills to using API and React framework.
 
 In general - this is the web page that show list and locations of high rated venues in Brooklyn Heights neighborhood, Brooklyn,NY,USA.
-Click on any venue in list selects appropriate markers in Google MAP and vice versa.
+Click on any venue in list select appropriate marker in Google MAP and vice versa.
 User can use filter in top of page by typing letters in input box - list dynamically will change.
 
-Each venues include own photos and menu from FourSquare.com.
+Each venue include own photos and menu from FourSquare.com.
 Menu is clickable and opened in new tab of browser.
 
 # Prepare project
