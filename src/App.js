@@ -45,7 +45,7 @@ class App extends Component {
       ll:location.lat+','+location.lng,
       query:'restaurant,pizza',
       radius:500,
-      limit:5,
+      limit:15,
       v:'20182507'
     }
     console.log('location:',location);
@@ -108,7 +108,7 @@ class App extends Component {
     console.log('requestsArr:',requestsArr);
     Promise.all(requestsArr).then(response=>{console.log('firing response PromiseAll');
                                               places = places.filter((item)=>{console.log('check >=:'+item.name+(item.rate>=6.8));
-                                              return item.rate>=0;})
+                                              return item.rate>=7.0;})
                                               this.setState({places:places}); //rerender components with new gotten data
                                               console.log('Inside PromiseAll Case setState places:',this.state.places);
                                              })
